@@ -10,7 +10,7 @@ public class AppConfig {
     @Bean
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasenames("classpath:LabelResources");
+        messageSource.setBasenames("classpath:LabelResources","classpath:MessageResource");
         messageSource.setDefaultEncoding("UTF-8");
 
         return messageSource;
