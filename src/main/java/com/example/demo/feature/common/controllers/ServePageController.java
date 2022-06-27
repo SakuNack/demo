@@ -11,7 +11,7 @@ public class ServePageController {
         return "home/home.html";
     }
 
-    @GetMapping("/pages/home/home.js")
+    @GetMapping("/pages/js/home")
     public String js() {
         return "home/home.js";
     }

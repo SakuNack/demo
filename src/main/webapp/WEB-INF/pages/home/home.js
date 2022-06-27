@@ -8,6 +8,5 @@ let HOME = (function ($) {
 
 $(document).ready(function () {
 	'use strict'
-		alert([[#{MATS.Button.Download}]]);
 });
 //]]>
