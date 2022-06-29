@@ -32,4 +32,19 @@ class ServePageControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertTrue(StringUtils.endsWith(response.getBody(), "//]]>"));
     }
+
+    @Test
+    @DisplayName("Test Case 3: Test Load HTML of home screen success")
+    void testCase3() {
+        ResponseEntity<String> response = restTemplate.exchange("/pages/login", HttpMethod.GET, null, String.class);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertTrue(StringUtils.endsWith(response.getBody(), "</html>"));
+    }
+    @Test
+    @DisplayName("Test Case 4: Test Load js of home screen success")
+    void testCase4() {
+        ResponseEntity<String> response = restTemplate.exchange("/pages/js/login", HttpMethod.GET, null, String.class);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertTrue(StringUtils.endsWith(response.getBody(), "//]]>"));
+    }
 }
