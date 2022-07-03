@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /mats
+    context-path: /demo
 
 spring:
   datasource:

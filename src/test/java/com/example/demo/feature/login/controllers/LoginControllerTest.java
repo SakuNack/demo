@@ -29,10 +29,12 @@ class LoginControllerTest {
     @Test
     @DisplayName("Test case1: login fail with username: testPass and password: 1234@abcd then return true")
     void testCase2() {
-        HttpEntity<LonginDTO> request = new HttpEntity<>(new LonginDTO("testPass", "1234@abcd"));
+        HttpEntity<LonginDTO> request = new HttpEntity<>(new LonginDTO("testpass", "1234@abcd"));
         ResponseEntity<Boolean> response = restTemplate.exchange("/login", HttpMethod.POST, request, Boolean.class);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(Boolean.TRUE, response.getBody());
     }
+
+
 
 }

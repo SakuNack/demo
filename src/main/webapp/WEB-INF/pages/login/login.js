@@ -38,10 +38,35 @@ $(document).ready(function () {
 
 	});
 
-	$('#login').on('click', _.debounce(function (event) {
+	$('#login').on('click', _.debounce(async event => {
 		event.preventDefault();
 		if ($('#loginForm').form('validate form')) {
-			alert('pass validate');
+			const loginData = $('#loginForm').form('get values');
+			const response = await fetch('/demo/login',
+				{
+					headers: {
+						"Content-Type": "application/json; charset=utf-8"
+					},
+
+					method: 'POST',
+					cache: 'no-cache',
+					body: JSON.stringify(loginData)
+				}
+			);
+			if (response.ok) {
+				const loginResult = await response.json();
+				if (loginResult) {
+					window.location.replace("/demo/pages/home");
+				} else {
+					const modal = DXCUtils.alertModal('MD0000ERR:login fail', null);
+					modal.modal('show');
+
+				}
+
+			} else {
+				const modal = DXCUtils.alertModal('MD0001ERR:request error', null);
+				modal.modal('show');
+			}
 		}
 
 	}, 300, true));

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoginController {
     @PostMapping("")
     public Boolean login(@RequestBody final LonginDTO longinDTO) {
-        return StringUtils.equalsIgnoreCase(longinDTO.getUsername(), "testPass")
+        return StringUtils.equalsIgnoreCase(longinDTO.getUsername(), "testpass")
                 && StringUtils.equalsIgnoreCase(longinDTO.getPassword(), "1234@abcd");
 
     }
