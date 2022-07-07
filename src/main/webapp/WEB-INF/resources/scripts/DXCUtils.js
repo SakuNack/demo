@@ -240,7 +240,7 @@ const DXCUtils = (function ($) {
             }
         },
         callAPI: async (uri, httpMethod, postData) => {
-            const url = `/mats${uri}`;
+            const url = `/demo${uri}`;
             const options = {
                 "method": httpMethod,
                 headers: {

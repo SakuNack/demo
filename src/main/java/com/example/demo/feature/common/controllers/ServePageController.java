@@ -28,5 +28,15 @@ public class ServePageController {
         return "login/login.js";
     }
 
+    @GetMapping("/master/gim")
+    public String gimMaster() {
+        return "gimmaster/gimmaster.html";
+    }
+
+    @GetMapping("/js/master/gim")
+    public String gimMasterJs() {
+        return "gimmaster/gimmaster.js";
+    }
+
 
 }

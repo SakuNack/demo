@@ -47,4 +47,20 @@ class ServePageControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertTrue(StringUtils.endsWith(response.getBody(), "//]]>"));
     }
+    @Test
+    @DisplayName("Test Case 3: Test Load HTML of gimmaster screen success")
+    void testCase5() {
+        ResponseEntity<String> response = restTemplate.exchange("/pages/master/gim", HttpMethod.GET, null, String.class);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertTrue(StringUtils.endsWith(response.getBody(), "</html>"));
+    }
+    @Test
+    @DisplayName("Test Case 4: Test Load js of gimmaster screen success")
+    void testCase6() {
+        ResponseEntity<String> response = restTemplate.exchange("/pages/js/master/gim", HttpMethod.GET, null, String.class);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertTrue(StringUtils.endsWith(response.getBody(), "//]]>"));
+    }
+
+
 }

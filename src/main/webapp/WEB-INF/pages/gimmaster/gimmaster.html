@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="templates/template.html :: app_header(~{::script},~{},~{})">
+	<script th:src="@{/pages/js/master/gim}"></script>
+</head>
+
+<body th:replace="templates/template.html :: app_body(~{::div},|#{MATS.WMATS0001.Screen.Id}|,|#{MATS.WMATS0001.Screen.Desc}|)">
+	<div class="sixteen wide column row" style="width:100%;" id="screenContent">
+		<div class="sixteen wide column row" id="searchResultSection">
+			<table id="tableSearchRult" class="ui celled striped unstackable table" style="width:100%;">
+				<thead>
+					<tr style="text-align: center;">
+						<th>Gim Type</th>
+						<th>Gim Description</th>
+						<th>CD Length</th>
+						<th>Field 1 Lable</th>
+						<th>Field 2 Lable</th>
+						<th>Field 3 Lable</th>
+						<th>Active Flag</th>
+						<th>Created By</th>
+						<th>Created Date</th>
+						<th>Modified By</th>
+						<th>Modified Date</th>
+
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>
